@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Sora';
+    src: url('fonte/Sora-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('fonte/Manrope-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+:root {
+     --cor-fundo: #1F1F1F;
+    --cor-texto: #F7F7F7;
+    --cor-texto-secundario: #ADADAD;
+    --cor-card: #2B2B2B;
+    --cor-borda: rgba(255, 255, 255, 0.12);
+
+     /* e meu nem mexe */
+    --cor-neon: #FFFFFF;
+    --cor-neon-azul: #DCEBFF;
+
+     --fonte-titulo: 'Sora', sans-serif;
+    --fonte-texto: 'Manrope', sans-serif;
+
+    --sombra-card: 0 10px 30px rgba(0, 0, 0, 0.25);
+    --sombra-neon:
+        0 0 10px rgba(255, 255, 255, 0.4),
+        0 0 30px rgba(180, 220, 255, 0.25);
+
+        --transicao-rapida: 0.2s ease;
+    --transicao: 0.3s ease;
+    --transicao-lenta: 0.6s ease;
+
+}
