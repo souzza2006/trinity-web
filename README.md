@@ -45,4 +45,4 @@ O projeto utiliza:
 - Efeitos de iluminação e neon
 
 ### Yuri De Souza 
-CEO · Full Stack Developer
+CEO 
