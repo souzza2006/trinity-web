@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'Sora';
+    src: url('fonte/Sora-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('fonte/Manrope-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+@keyframes neon{
+    from{
+        text-shadow: 0 0 5px white;
+    }
+
+    to{
+        text-shadow: 0 0 15px white;
+    }
+}
+
+@keyframes neon-logo {
+    from {
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8))
+                drop-shadow(0 0 14px rgba(255, 255, 255, 0.45));
+    }
+
+    to {
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1))
+                drop-shadow(0 0 22px rgba(255, 255, 255, 0.75));
+    }
+}
+
+:root {
+     --cor-fundo: #080808;
+    --cor-texto: #F7F7F7;
+    --cor-texto-secundario: #ADADAD;
+    --cor-card: #2B2B2B;
+    --cor-borda: rgba(255, 255, 255, 0.12);
+
+     /* e meu nem mexe */
+    --cor-neon: #FFFFFF;
+    --cor-neon-azul: #DCEBFF;
+
+     --fonte-titulo: 'Sora', sans-serif;
+    --fonte-texto: 'Manrope', sans-serif;
+
+    --sombra-card: 0 10px 30px rgba(0, 0, 0, 0.25);
+    --sombra-neon:
+        0 0 10px rgba(255, 255, 255, 0.4),
+        0 0 30px rgba(180, 220, 255, 0.25);
+
+        --transicao-rapida: 0.2s ease;
+    --transicao: 0.3s ease;
+    --transicao-lenta: 0.6s ease;
+}
+body{
+    background-color: var(--cor-fundo);
+    margin-left: 200px;
+}
+nav{
+    position: fixed;
+    top: 240px;
+    left: 25px;
+    gap: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    color:  var(--cor-texto-secundario);
+    font-family: var(--fonte-texto);
+}
+
+nav a{
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease, transform 0.2s ease, font-size 0.2s ease;
+}
+
+nav a::before{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+
+    vertical-align: middle;
+    margin-right: 9px;
+
+    background-color: var(--cor-texto-secundario);
+    transition: width 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--cor-neon);
+    transform: scale(1.02);
+}
+
+nav a:hover::before {
+    width: 38px;
+    background-color: var(--cor-neon);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+nav a.active {
+    color: var(--cor-neon);
+    transform: scale(1.02);
+    font-size: 1.02em;
+}
+
+nav a.active::before {
+    width: 42px;
+    background-color: var(--cor-neon);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+
+.hero-conteudo{
+padding-bottom: 200px;
+}
+
+.hero-conteudo h1{
+    font-family: var(--fonte-texto);
+    color: var(--cor-neon);
+    writing-mode:vertical-rl;
+
+    position: absolute;
+    top: 60px;
+    font-size: 80px;
+    letter-spacing: 20px;
+
+    animation: neon 3s infinite alternate;
+}
+
+.hero-conteudo img{
+    position: relative;
+    width: 350px;
+    left: 33%;
+    top: 100px;
+
+    animation: neon-logo 2.8s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+}
+
+.scrol{
+    position: relative;
+    left: 39%;
+    bottom: 90px;
+    color: rgb(76, 76, 76);
+    font-family: var(--fonte-titulo);
+    letter-spacing: 2px;
+    
+}
