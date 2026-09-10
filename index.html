@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav>
-            <a href="#quem-somos">sobre nós</a>
+            <a href="#somos">sobre nós</a>
             <a href="#equipe">equipe</a>
             <a href="#projetos">projetos</a>
             <a href="#contato">contato</a>
@@ -28,8 +28,8 @@
             <div class="scrol">ROLE PARA DESCOBRIR</div>
         </section>
 
-        <section id="quem-somos">
-            <h3>quem somos</h3>
+        <section id="somos">
+            <p>QUEM SOMOS</p>
 
             <h1>Três vértices, uma única entrega: estratégia, design e código.</h1>
 
@@ -41,16 +41,16 @@
         </section>
 
         <section id="equipe">
-            <h3>equipe</h3>
+            <p>EQUIPE</p>
 
             <h1>quem está por trás</h1>
                
             <div class="equipe-container">
-                <article class="card-quipe">
+                <article class="card-equipe">
                     
                     <div class="perfil">
 
-                        <img src="" alt="foto gb">
+                        <img src="img/WhatsApp Image 2026-09-10 at 17.07.12.jpeg" alt="foto gb">
 
                         <div class="info">
                             <h3>Gabriel Alves Zylbert</h3>
@@ -59,11 +59,11 @@
                     </div>
                 </article>
 
-                <article class="card-quipe">
+                <article class="card-equipe">
 
                     <div class="perfil">
                         
-                        <img src="" alt="foto yuri">
+                        <img src="img/foto yuri.jpg" alt="foto yuri">
 
                         <div class="info">
                             <h3>Yuri De Souza Mendes</h3>
@@ -72,11 +72,11 @@
                     </div>
                 </article>
 
-                <article class="card-quipe">
+                <article class="card-equipe">
 
                     <div class="perfil">
 
-                        <img src="" alt="foto nicao">
+                        <img src="img/foto nicolas.jpg" alt="foto nicao">
 
                         <div class="info">
                             <h3>Nicolas Gabriel</h3>
@@ -88,7 +88,7 @@
         </section>
 
         <section id="projetos">
-            <h3>projetos</h3>
+            <p>PROJETOS</p>
             <h1>Alguns dos projetos desenvolvidos pela nossa equipe</h1>
 
             <div class="projetos-grid">
@@ -155,10 +155,10 @@
         </section>
 
         <section id="contato">
-            <h3>contato</h3>
+            <p>contato</p>
             <h1>Vamos tirar sua ideia do papel</h1>
              
-            <a href="#">Contato</a>
+            <a href="#">CONTATO</a>
 
               <div class="footer-contato">
             
@@ -171,42 +171,6 @@
         <p>© 2026 Trinity. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        const links = document.querySelectorAll('nav a');
-        const sections = document.querySelectorAll('main section[id]');
-
-        function setActiveLink(id) {
-            links.forEach(link => {
-                const isActive = link.getAttribute('href') === `#${id}`;
-                link.classList.toggle('active', isActive);
-            });
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setActiveLink(entry.target.id);
-                }
-            });
-        }, {
-            rootMargin: '-35% 0px -45% 0px',
-            threshold: 0.1
-        });
-
-        sections.forEach(section => observer.observe(section));
-
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                const id = link.getAttribute('href').replace('#', '');
-                setActiveLink(id);
-            });
-        });
-
-        const scrollIndicator = document.querySelector('.scrol');
-
-        window.addEventListener('scroll', () => {
-            scrollIndicator.classList.toggle('hidden', window.scrollY > 10);
-        }, { passive: true });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

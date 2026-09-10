@@ -24,13 +24,13 @@
 
 @keyframes neon-logo {
     from {
-        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8))
-                drop-shadow(0 0 14px rgba(255, 255, 255, 0.45));
+    filter: drop-shadow(0 0 calc(4px * var(--logo-visible)) rgba(255, 255, 255, calc(0.8 * var(--logo-visible))))
+        drop-shadow(0 0 calc(14px * var(--logo-visible)) rgba(255, 255, 255, calc(0.45 * var(--logo-visible))));
     }
 
     to {
-        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1))
-                drop-shadow(0 0 22px rgba(255, 255, 255, 0.75));
+    filter: drop-shadow(0 0 calc(8px * var(--logo-visible)) rgba(255, 255, 255, var(--logo-visible)))
+        drop-shadow(0 0 calc(22px * var(--logo-visible)) rgba(255, 255, 255, calc(0.75 * var(--logo-visible))));
     }
 }
 
@@ -121,7 +121,7 @@ nav a.active::before {
 
 
 .hero-conteudo{
-padding-bottom: 200px;
+padding-bottom: 400px;
 }
 
 .hero-conteudo h1{
@@ -138,21 +138,101 @@ padding-bottom: 200px;
 }
 
 .hero-conteudo img{
+    --logo-visible: calc(1 - var(--scroll-progress));
+    display: block;
     position: relative;
     width: 350px;
-    left: 33%;
-    top: 100px;
+    left: 0;
+    top: 0;
+    margin: 100px auto 0;
 
     animation: neon-logo 2.8s ease-in-out infinite alternate;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+    opacity: var(--logo-visible);
+    transform: scale(calc(1 - (0.08 * var(--scroll-progress)))) translateY(calc(20px * var(--scroll-progress)));
+    transition: opacity 0.1s linear, transform 0.1s linear;
 }
 
 .scrol{
+    opacity: calc(1 - var(--scroll-progress));
     position: relative;
-    left: 39%;
-    bottom: 90px;
+    left: 0;
+    bottom: 250px;
+    text-align: center;
     color: rgb(76, 76, 76);
     font-family: var(--fonte-titulo);
     letter-spacing: 2px;
-    
+    transition: opacity 0.2s ease;
+}
+
+section h3{
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+    letter-spacing: 3px;
+}
+
+section h1{
+    color: var(--cor-texto);
+    font-family: var(--fonte-titulo);
+}
+
+section p{
+    font-family: var(--fonte-texto);
+    color: var(--cor-texto-secundario);
+}
+
+section[id] > p:first-child{
+    letter-spacing: 3px;
+}
+
+#somos > p:last-child {
+    max-width: 620px;
+}
+
+#somos,
+#equipe,
+#projetos,
+#contato{
+    padding-top: 200px;
+}
+.equipe-container{
+    display: flex;
+    gap: 20px;
+} 
+
+.card-equipe{
+    background-color: rgb(28, 28, 28);
+    padding: 20px;
+    border: 0.5px solid white;
+    transition: 0.2s;
+}
+
+.card-equipe:hover{
+    background-color:var(--cor-card) ;
+}
+
+.perfil{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.perfil img{
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info{
+    min-width: 0;
+}
+
+.info h3,
+.info p{
+    margin: 0;
+}
+
+.info p{
+    margin-top: 6px;
 }
