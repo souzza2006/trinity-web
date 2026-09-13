@@ -1,5 +1,22 @@
 const links = document.querySelectorAll('nav a');
 const sections = document.querySelectorAll('main section[id]');
+const loader = document.querySelector('.loader');
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        if (!loader) {
+            return;
+        }
+
+        setTimeout(() => {
+            document.body.classList.add('site-loaded');
+
+            setTimeout(() => {
+                loader.remove();
+            }, 1300);
+        }, 250);
+    }, 200);
+});
 
 function setActiveLink(id) {
     links.forEach(link => {
