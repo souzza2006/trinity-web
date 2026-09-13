@@ -175,6 +175,10 @@ section h1{
     font-family: var(--fonte-titulo);
 }
 
+#contato h1 strong{
+    font-weight: 600;
+}
+
 section p{
     font-family: var(--fonte-texto);
     color: var(--cor-texto-secundario);
@@ -188,51 +192,138 @@ section[id] > p:first-child{
     max-width: 620px;
 }
 
+.precos-intro{
+    line-height: 1.7;
+    max-width: 680px;
+}
+
 #somos,
-#equipe,
+#precos,
 #projetos,
 #contato{
     padding-top: 200px;
 }
-.equipe-container{
+.precos-container{
     display: flex;
-    gap: 20px;
-} 
+    gap: 24px;
+    max-width: 900px;
+}
 
-.card-equipe{
+.card-preco{
     background-color: rgb(28, 28, 28);
-    padding: 20px;
-    border: 0.5px solid white;
-    transition: 0.2s;
-}
-
-.card-equipe:hover{
-    background-color:var(--cor-card) ;
-}
-
-.perfil{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.perfil img{
-    width: 100px;
-    height: 100px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.info{
+    border: 1px solid var(--cor-borda);
+    padding: 32px;
+    flex: 1;
     min-width: 0;
+    transition: background-color var(--transicao), border-color var(--transicao), transform var(--transicao);
 }
 
-.info h3,
-.info p{
+.card-preco:hover{
+    background-color:var(--cor-card) ;
+    border-color: rgba(255, 255, 255, 0.45);
+    transform: translateY(-5px);
+}
+
+.card-preco-destaque{
+    border-color: var(--cor-neon);
+}
+
+.preco-label{
+    color: var(--cor-neon) !important;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
     margin: 0;
 }
 
-.info p{
-    margin-top: 6px;
+.card-preco h2{
+    color: var(--cor-texto);
+    font-family: var(--fonte-titulo);
+    font-size: 1.45rem;
+    margin: 18px 0 12px;
+}
+
+.preco-descricao{
+    line-height: 1.6;
+    min-height: 78px;
+    margin: 0;
+}
+
+.preco-valor{
+    color: var(--cor-texto);
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 28px;
+}
+
+.preco-valor span{
+    color: var(--cor-texto-secundario);
+    font-family: var(--fonte-texto);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.preco-recorrencia{
+    font-size: 0.8rem;
+    margin: 6px 0 28px;
+}
+
+.card-preco ul{
+    border-top: 1px solid var(--cor-borda);
+    list-style: none;
+    margin: 0;
+    padding: 22px 0 0;
+}
+
+.card-preco li{
+    color: var(--cor-texto-secundario);
+    font-family: var(--fonte-texto);
+    padding: 8px 0 8px 22px;
+    position: relative;
+}
+
+.card-preco li::before{
+    color: var(--cor-neon);
+    content: "✓";
+    left: 0;
+    position: absolute;
+}
+
+.preco-observacao{
+    border-left: 2px solid var(--cor-neon);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 24px 0 0;
+    padding-left: 12px;
+}
+
+.preco-cta{
+    border-bottom: 1px solid var(--cor-neon);
+    color: var(--cor-texto);
+    display: inline-block;
+    font-family: var(--fonte-texto);
+    margin-top: 28px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: color var(--transicao-rapida), border-color var(--transicao-rapida);
+}
+
+.preco-cta:hover{
+    border-color: var(--cor-texto-secundario);
+    color: var(--cor-texto-secundario);
+}
+
+@media (max-width: 760px){
+    body{
+        margin-left: 110px;
+    }
+
+    .precos-container{
+        flex-direction: column;
+        margin-right: 20px;
+    }
+
+    .preco-descricao{
+        min-height: 0;
+    }
 }
