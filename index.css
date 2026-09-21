@@ -198,6 +198,9 @@ padding-bottom: 400px;
     font-family: var(--fonte-texto);
     color: var(--cor-neon);
     writing-mode:vertical-rl;
+    opacity: calc(1 - (0.75 * var(--scroll-progress)));
+    transform: scale(calc(1 - (0.12 * var(--scroll-progress)))) translateY(calc(18px * var(--scroll-progress)));
+    transition: opacity 0.2s ease, transform 0.2s ease;
 
     position: absolute;
     top: 60px;
@@ -214,12 +217,39 @@ padding-bottom: 400px;
     width: 350px;
     left: 0;
     top: 0;
-    margin: 100px auto 0;
+    margin: 100px auto 18px;
 
     animation: neon-logo 2.8s ease-in-out infinite alternate;
     opacity: var(--logo-visible);
     transform: scale(calc(1 - (0.08 * var(--scroll-progress)))) translateY(calc(20px * var(--scroll-progress)));
     transition: opacity 0.1s linear, transform 0.1s linear;
+}
+
+.hero-cta{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    padding: 14px 26px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--cor-neon);
+    text-decoration: none;
+    font-family: var(--fonte-texto);
+    font-size: clamp(0.72rem, 1vw, 0.9rem);
+    letter-spacing: 2px;
+    opacity: calc(1 - (0.6 * var(--scroll-progress)));
+    transform: translateY(calc(12px * var(--scroll-progress))) scale(calc(1 - (0.08 * var(--scroll-progress))));
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.12);
+    width: fit-content;
+}
+
+.hero-cta:hover{
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 22px rgba(255, 255, 255, 0.25);
 }
 
 .scrol{
@@ -385,20 +415,6 @@ section[id] > p:first-child{
     color: var(--cor-texto-secundario);
 }
 
-@media (max-width: 760px){
-    body{
-        margin-left: 110px;
-    }
-
-    .precos-container{
-        flex-direction: column;
-        margin-right: 20px;
-    }
-
-    .preco-descricao{
-        min-height: 0;
-    }
-}
 #contato{
     background-color: #111111;
     border-top: 1px solid var(--cor-borda);
@@ -418,6 +434,7 @@ section[id] > p:first-child{
 }
 
 .contato-cta{
+    position: relative;
     background-color: transparent;
     border: 1px solid var(--cor-neon);
     box-shadow: var(--sombra-neon);
@@ -428,7 +445,9 @@ section[id] > p:first-child{
     margin: 42px auto 0;
     padding: 17px 28px;
     text-decoration: none;
-    transition: background-color var(--transicao), box-shadow var(--transicao), color var(--transicao), transform var(--transicao);
+    opacity: calc(1 - (0.7 * var(--scroll-progress)));
+    transform: translateY(calc(14px * var(--scroll-progress))) scale(calc(1 - (0.08 * var(--scroll-progress))));
+    transition: background-color var(--transicao), box-shadow var(--transicao), color var(--transicao), transform var(--transicao), opacity 0.2s ease;
     width: 200px;
 }
 
@@ -533,20 +552,23 @@ section[id] > p:first-child{
 
 @media (max-width: 760px){
     body{
-        padding-bottom: 64px;
+        margin-left: 0;
         padding-left: 0;
+        padding-top: 56px;
     }
 
     nav{
+        align-items: center;
         background-color: rgba(8, 8, 8, 0.96);
-        border-top: 1px solid var(--cor-borda);
-        bottom: 0;
+        border-bottom: 1px solid var(--cor-borda);
+        border-top: 0;
+        flex-direction: row;
         gap: 4px;
         justify-content: space-around;
         left: 0;
         padding: 12px 8px;
         right: 0;
-        top: auto;
+        top: 0;
         z-index: 5;
     }
 
@@ -568,13 +590,27 @@ section[id] > p:first-child{
     .hero-conteudo h1{
         font-size: clamp(3rem, 16vw, 5rem);
         letter-spacing: 10px;
-        top: 28px;
-        left: 20px;
+        line-height: 0.9;
+        top: 76px;
+        left: -3px;
     }
 
     .hero-conteudo img{
-        margin-top: 80px;
+        left: 9vw;
+        margin-top: 6px;
+        margin-bottom: 20px;
         width: min(350px, 72vw);
+    }
+
+    .hero-cta{
+        display: block;
+        left: 10px;
+        bottom: -80px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 12px 18px;
+        text-align: center;
+        width: min(calc(100% - 48px), 240px);
     }
 
     .scrol{
@@ -585,6 +621,8 @@ section[id] > p:first-child{
     #somos,
     #precos,
     #projetos{
+        padding-left: 24px;
+        padding-right: 24px;
         padding-top: 120px;
     }
 
@@ -594,6 +632,16 @@ section[id] > p:first-child{
 
     .card-preco{
         padding: 24px;
+    }
+
+    .precos-container{
+        flex-direction: column;
+        margin: 0;
+        max-width: none;
+    }
+
+    .preco-descricao{
+        min-height: 0;
     }
 
     .projetos-grid{
@@ -614,5 +662,15 @@ section[id] > p:first-child{
         font-size: 0.75rem;
         padding: 0 20px;
         text-align: center;
+    }
+}
+
+@media (max-width: 380px){
+    nav a{
+        font-size: 0.62rem;
+    }
+
+    .footer-contato{
+        gap: 18px;
     }
 }
