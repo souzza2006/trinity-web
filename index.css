@@ -591,6 +591,31 @@ section[id] > p:first-child{
     gap: 8px;
 }
 
+.links{
+    margin-top: 18px;
+}
+
+.links a{
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: var(--cor-texto);
+    display: inline-flex;
+    font-family: var(--fonte-texto);
+    font-size: 0.76rem;
+    letter-spacing: 1.5px;
+    padding: 10px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color var(--transicao), border-color var(--transicao), box-shadow var(--transicao), transform var(--transicao), color var(--transicao);
+}
+
+.links a:hover{
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.12);
+    color: var(--cor-neon);
+    transform: translateY(-2px);
+}
+
 @media (max-width: 980px){
     body{
         padding-left: 160px;
