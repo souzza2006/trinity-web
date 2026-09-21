@@ -53,8 +53,11 @@ O projeto utiliza uma abordagem visual contemporânea, com foco em:
 
 ## Equipe
 
-### Yuri de Souza
-CEO e fundador
+| Pessoa | Cargo |
+| --- | --- |
+| Yuri de Souza Mendes | CEO e fundador |
+| Gabriel Alves Zylbert | Cofundador |
+| Nicolas Gabriel | Co-CEO |
 
 ## Objetivo do projeto
 
