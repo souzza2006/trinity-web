@@ -1,29 +1,32 @@
-# trinity-web
-Site institucional da Trinity — desenvolvimento de landing pages e experiências digitais modernas.
-# Trinity
+﻿# Trinity
 
-> Estratégia, design e código em uma única entrega.
+Trinity é uma agência digital focada em criação de experiências web de alto impacto, com especialização em landing pages, identidade visual digital e presença online para marcas que buscam crescimento, credibilidade e conversão.
 
-A Trinity é uma equipe de desenvolvimento focada na criação de
-landing pages e experiências digitais modernas, rápidas e responsivas.
+## Visão geral
 
-Unimos estratégia, design e desenvolvimento para transformar ideias
-em produtos digitais profissionais, pensados para fortalecer marcas
-e gerar resultados.
+Este repositório contém o site institucional da Trinity, desenvolvido para apresentar a empresa, seus serviços, proposta de valor, portfólio e equipe. O objetivo é demonstrar profissionalismo, clareza estratégica e execução técnica de nível corporativo.
 
----
+## Missão
 
-## 🚀 Sobre o projeto
+Transformar ideias em soluções digitais eficientes, visualmente refinadas e orientadas por resultados de negócio.
 
-Este repositório contém o site institucional da Trinity.
+## Valores
 
-O projeto apresenta nossa equipe, nossos trabalhos e os serviços
-oferecidos pela empresa, funcionando também como nosso portfólio
-digital.
+- Profissionalismo
+- Precisão na execução
+- Design com propósito
+- Foco em performance e experiência do usuário
+- Relação direta com o cliente e compromisso com resultados
 
----
+## Serviços
 
-## 🛠️ Tecnologias
+- Desenvolvimento de landing pages
+- Posicionamento e identidade digital
+- Design de interfaces e experiência de usuário
+- Estruturas visuais para marcas e negócios
+- Soluções web sob medida
+
+## Stack tecnológica
 
 - HTML5
 - CSS3
@@ -31,18 +34,36 @@ digital.
 - Git
 - GitHub
 
----
+## Design e experiência
 
-## 🎨 Design
+O projeto utiliza uma abordagem visual contemporânea, com foco em:
 
-O projeto utiliza:
+- tipografia premium
+- layout responsivo
+- interface minimalista e moderna
+- animações sutis e refinadas
+- identidade visual alinhada ao posicionamento da marca
 
-- Sora para títulos e elementos de destaque
-- Manrope para textos e elementos de interface
-- Layout responsivo
-- Animações e transições
-- Interface com estética moderna e minimalista
-- Efeitos de iluminação e neon
+## Estrutura do projeto
 
-### Yuri De Souza 
-CEO 
+- index.html: estrutura principal da página institucional
+- index.css: estilos, layout e responsividade
+- js/script.js: interações e comportamentos da interface
+- img/: arquivos gráficos e imagens do portfólio
+
+## Equipe
+
+### Yuri de Souza
+CEO e fundador
+
+## Objetivo do projeto
+
+Criar um portfólio digital que comunique a qualidade da Trinity, reforçando sua capacidade de entregar soluções digitais fortes, confiáveis e estrategicamente alinhadas ao mercado.
+
+## Contato
+
+Para mais informações, entre em contato com a Trinity por meio do canal oficial do projeto e acompanhe o trabalho desenvolvido.
+
+## Status
+
+Em desenvolvimento e em constante evolução.
