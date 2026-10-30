@@ -38,6 +38,74 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(section => observer.observe(section));
 
+const projectDialog = document.querySelector('.projeto-dialog');
+const projectImage = projectDialog?.querySelector('.projeto-dialog-imagem');
+const projectSiteLink = projectDialog?.querySelector('.projeto-dialog-link');
+const closeProjectDialog = projectDialog?.querySelector('.projeto-dialog-fechar');
+const projectPreviews = document.querySelectorAll('.projeto-preview');
+
+if (projectDialog && projectImage && projectSiteLink && closeProjectDialog) {
+    projectPreviews.forEach(preview => {
+        preview.addEventListener('click', event => {
+            if (typeof projectDialog.showModal !== 'function') {
+                return;
+            }
+
+            const previewImage = preview.querySelector('img');
+            const cardSiteLink = preview.closest('.projeto')?.querySelector('.projeto-link');
+            if (!previewImage || !cardSiteLink) {
+                return;
+            }
+
+            projectImage.src = previewImage.src;
+            projectImage.alt = previewImage.alt;
+            projectSiteLink.href = cardSiteLink.href;
+            projectDialog.showModal();
+        });
+    });
+
+    closeProjectDialog.addEventListener('click', () => projectDialog.close());
+
+    projectDialog.addEventListener('click', event => {
+        if (event.target === projectDialog) {
+            projectDialog.close();
+        }
+    });
+
+    projectDialog.addEventListener('close', () => {
+        projectImage.removeAttribute('src');
+        projectImage.alt = '';
+        projectSiteLink.href = '#';
+    });
+}
+
+const revealElements = document.querySelectorAll(
+    'main section[id] > p:first-child, main section[id] > h1, main section[id] > .projetos-grid, main section[id] > .precos-intro, .projeto, .card-preco, .processo-pagamento-layout, .lideranca-item, .duvida-item, .duvidas-contato'
+);
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (prefersReducedMotion) {
+    revealElements.forEach(element => element.classList.add('scroll-reveal', 'is-visible'));
+} else {
+    const revealObserver = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                currentObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '0px 0px -8% 0px',
+        threshold: 0.12
+    });
+
+    revealElements.forEach((element, index) => {
+        element.classList.add('scroll-reveal');
+        element.style.setProperty('--reveal-delay', `${(index % 3) * 80}ms`);
+        revealObserver.observe(element);
+    });
+}
+
 links.forEach(link => {
     link.addEventListener('click', event => {
         event.preventDefault();
